@@ -8,6 +8,8 @@ mongoose.connect(process.env.DATABASE_HOST, {
 
 // mongoose.set('debug', true);
 
+usefindandmodify: false;
+
 const connection = mongoose.connection;
 
 connection.once('open', function () {
