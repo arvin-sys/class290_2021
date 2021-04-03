@@ -1,5 +1,4 @@
 const User = require('../users/user.entity');
-const { Unauthorized } = require('http-errors')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { Locked } = require('http-errors');
@@ -31,7 +30,9 @@ class AuthService {
         const token = jwt.sign({ userId: user._id, username: user.username }, process.env.JWT_SECRET, {
             expiresIn: process.env.JWT_EXPIRES_IN
         })
+
         return token;
+
     }
 
     validateToken(token) {
