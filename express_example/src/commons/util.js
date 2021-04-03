@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+const ROLES = {ADMIN:'admin', CUSTOMER:'customer'}
+
 module.exports = {
     writeInFile(content) {
         return new Promise((resolve) => {
@@ -19,5 +21,7 @@ module.exports = {
                 resolve(data);
             });
         });
-    }
+    },
+
+    ROLES
 }
