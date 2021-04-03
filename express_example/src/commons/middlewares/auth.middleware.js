@@ -13,7 +13,6 @@ const jwtMiddleware = async (req, res, next) => {
     } catch (err) {
         return next(new Forbidden());
     }
-
     next();
 }
 
