@@ -8,10 +8,10 @@ class UserService {
         const user = new User(payload);
         return user.save();
     }
+    
 
     findAll(query) {
         const { offset, limit, sort, asc } = query;
-
         const sortObj = {};
         sortObj[sort] = asc === 'true' ? 'asc' : 'desc';
 
@@ -31,9 +31,6 @@ class UserService {
     }
 
     async delete(id) {
-        // Remember to install Replica mode of mongodb in your system to enable
-        // transactions. https://docs.mongodb.com/manual/tutorial/deploy-replica-set/
-
         const session = await mongoose.startSession();
         session.startTransaction();
 
@@ -57,9 +54,7 @@ class UserService {
 
     async update(id, payload) {
         let user = await this.findOne(id);
-
         user = Object.assign(user, payload);
-
         return user.save();
     }
 }
