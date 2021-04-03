@@ -8,7 +8,6 @@
     "start:dev": "nodemon index.js --watch",
     "test:e2e": "NODE_ENV=test mocha --recursive './test/**/*.spec.js'"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,6 +20,7 @@
     "express-async-handler": "^1.1.4",
     "express-session": "^1.17.1",
     "express-unless": "^0.5.0",
+    "express-validator": "^6.10.0",
     "http-errors": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.18",
